@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>집에서 단색목판화 만들기</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Pretendard";src:url("fonts/Pretendard-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Distort";src:url("fonts/Distort-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Distort";src:url("fonts/Distort-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+:root{--bg:#ECE6E2;--ink:#2a2a2c;--sub:#5d5a55;--wood:#D9A36E;--wd:#8f5520;--card:#F8F5EF;--line:#d8d1c5;--ok:#3f7d4e;--figh:0px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1e1c1a;--ink:#efe9df;--sub:#b3ab9f;--wd:#e3b685;--card:#2a2724;--line:#413c36;--ok:#5fae72}}
+:root[data-theme="dark"]{--bg:#1e1c1a;--ink:#efe9df;--sub:#b3ab9f;--wd:#e3b685;--card:#2a2724;--line:#413c36;--ok:#5fae72}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 "Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;word-break:keep-all}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3{font-family:"Black Han Sans","Pretendard",sans-serif;font-weight:400;line-height:1.2;margin:0}
+h2{font-size:clamp(28px,5vw,40px)}h3{font-size:22px}
+button{font:inherit;color:inherit;cursor:pointer}
+.op,.chip{cursor:default}
+button:focus-visible,a:focus-visible{outline:3px solid var(--wd);outline-offset:2px}
+p{margin:0}.sub{font-size:14px;color:var(--sub)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:0 0 96px}#intro{padding-top:96px;scroll-margin-top:-96px}#steps{padding-bottom:60px}
+.ey{font-weight:700;color:var(--wd);font-size:14px;margin-bottom:6px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.br{font-family:"Black Han Sans",sans-serif;font-weight:400}
+.home{flex:none;width:44px;height:44px;border:0;background:none;display:grid;place-items:center;padding:0}
+.home svg{width:36px;height:33px;display:block}
+.links{margin-left:auto;display:flex;gap:2px}
+.links button{min-height:44px;padding:0 12px;border:0;border-bottom:3px solid transparent;background:none;font-weight:700;font-size:15px}
+.links button:hover{color:var(--wd)}
+.hero{background:var(--wood);padding-top:clamp(16px,4vw,44px)}
+.hero-in{margin:0 clamp(10px,4vw,48px);background:var(--bg);clip-path:polygon(0 20%,50% 0,100% 20%,100% 100%,0 100%);padding:clamp(90px,16vw,170px) 20px 56px;text-align:center}
+.hero h1{font-family:"Distort","Black Han Sans",sans-serif;font-weight:700;font-size:clamp(27px,8vw,82px);line-height:1.18}.hero h1 .w{color:var(--wood)}
+h2.dis{font-family:"Distort","Black Han Sans",sans-serif;font-weight:500;font-size:clamp(26px,4.5vw,36px)}
+.hero-txt{text-align:center}
+.hero h1 .ln{display:block}
+.hero-art{width:clamp(150px,17vw,260px);height:auto}
+.art-inline{display:inline-block;vertical-align:middle;position:relative;top:10px;margin:-14px 0 -14px clamp(12px,2vw,28px)}
+.art-top{display:none}
+.hero .k{font:500 clamp(18px,3vw,26px) "Distort","Black Han Sans",sans-serif;margin:14px 0 8px}
+.cta{display:inline-block;margin:14px 6px 0;padding:14px 24px;border-radius:99px;background:var(--ink);color:var(--bg);font-weight:700;text-decoration:none}
+.cta.g{background:none;color:var(--ink);border:2px solid var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.seg{display:flex;gap:6px;margin:12px 0}.seg button{flex:1;padding:8px;border:1.5px solid var(--ink);background:none;border-radius:99px;font-weight:700}.seg button.on{background:var(--ink);color:var(--bg)}
+.swatch{height:84px;border-radius:12px;margin-bottom:10px}
+.swatch.e{background:repeating-radial-gradient(circle at 50% 50%,#c98f55 0 5px,#e3b886 5px 10px)}
+.swatch.g{background:repeating-linear-gradient(90deg,#c98f55 0 3px,#dfae78 3px 9px,#d29a62 9px 12px)}
+.kp .fh{fill:#231f20}@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .kp .fh{fill:var(--ink)}}
+.kp{display:flex;gap:16px;align-items:center}@media(min-width:861px){.kp{align-items:flex-start}.kp svg{margin-top:26px}.kp>div{min-height:82px}}.kp svg{width:140px;flex:none;color:var(--ink)}
+.gh{font-size:18px;margin:26px 0 10px}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.it{position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:14px}
+.op{display:flex;flex-direction:column;gap:2px;align-items:flex-start;width:100%;padding:12px;background:none;border:0;text-align:left}
+.ic{font-size:26px;line-height:1}
+.sm .op{flex-direction:row;align-items:center;gap:8px;padding:8px 10px}.it.sm{display:flex}.sm .ic{font-size:20px}.sm b{font-size:14px}
+.bd{font-style:normal;font-size:11px;border-radius:99px;padding:1px 8px;font-weight:700;display:inline-block;line-height:1.5}
+.bd.new{background:var(--wood);color:#2a2a2c}.bd.c{border:1px solid var(--line);color:var(--sub)}.bd.o{border:1px dashed var(--sub);color:var(--sub)}
+.stage{display:grid;grid-template-columns:minmax(300px,5fr) 6fr;gap:40px;align-items:start;margin-top:56px}
+.fig{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);text-align:center}
+.fig svg{width:100%;max-height:70vh;color:var(--ink);overflow:visible}
+.lay text{fill:currentColor;font-size:14px;font-weight:700}
+.lay.off{opacity:0}
+.hasHl .lay:not(.hl){opacity:.28}.hasHl .lay.off{opacity:0}
+.lay.hl polygon:not(.sk){stroke:#ff8a00;stroke-width:3}
+.st{fill:none;stroke:none}
+.st-line .st{stroke:#555;stroke-width:2.5;fill:rgba(60,60,60,.12)}
+.st-raised .st{fill:#E9C193;stroke:#9a6a38;stroke-width:1.5}
+.st-ink .st{fill:#1f1f21}
+.step{padding:0 0 96px;scroll-margin-top:calc(env(safe-area-inset-top,0px) + 76px + var(--figh))}
+.shead{display:flex;align-items:center;gap:12px}
+.num{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--bg);font:400 22px "Black Han Sans",sans-serif}
+.step:last-child{min-height:78vh}
+.step h3{font-size:30px;line-height:1.2;transform:translateY(var(--dy,0px))}
+.nt{display:block;font:inherit;line-height:1;transform:translateY(var(--ndy,0px))}
+.need{border:1.5px solid var(--wd);border-radius:14px;padding:12px;margin:16px 0}
+.strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.subs{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.subs li>div{flex:1 1 180px;min-width:0}
+.sub-art{flex:none;width:150px;height:auto}.subs li.has-art{align-items:center;flex-wrap:nowrap}
+.subs li{flex-wrap:wrap;display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.subs i{font:400 15px "Black Han Sans",sans-serif;font-style:normal;flex:none;color:var(--wd);padding-top:2px}
+.chip{background:none;border:0;border-bottom:2px solid var(--wood);padding:0 1px;font-weight:700;color:inherit}
+.tip{display:flex;gap:10px;align-items:flex-start;border-left:4px solid var(--wood);background:var(--bg);border-radius:8px;padding:10px 12px;margin-top:10px;font-size:14.5px;line-height:1.6}
+.tip>b{flex:none;background:var(--wood);color:#2a2a2c;border-radius:5px;padding:0 7px;font-size:12px;line-height:22px}
+.tip.warn{border-left-color:#d9534f}.tip.warn>b{background:#d9534f;color:#fff}
+.tm{margin:8px 8px 0 0;border:0;background:var(--wood);color:#2a2a2c;border-radius:99px;padding:8px 16px;font-weight:700;min-height:44px}
+output{font:400 22px "Black Han Sans",sans-serif}
+.sg{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:8px 0 0;list-style:none;counter-reset:n}
+.sg li{counter-increment:n;background:var(--wood);color:#2a2a2c;border-radius:99px;padding:2px 12px;font-size:14px;font-weight:700}
+.sg li::before{content:counter(n) ". "}
+.pn{display:flex;gap:10px;margin-top:22px}
+.pn button{flex:1;min-height:54px;border-radius:14px;border:2px solid var(--ink);background:none;font-weight:700;font-size:16px}
+.pn .nx{background:var(--ink);color:var(--bg)}
+.ex{font-weight:700;background:var(--card);border:1px dashed var(--wd);border-radius:12px;display:inline-block;padding:8px 16px;margin:6px 0}
+footer{padding:20px 20px 100px;text-align:center}
+#sheet{position:fixed;left:0;right:0;bottom:0;z-index:40;max-width:520px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:20px 20px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));transform:translateY(110%);box-shadow:0 -8px 30px rgba(0,0,0,.3)}
+#sheet.open{transform:none}
+#sheet h4{font:400 22px "Black Han Sans",sans-serif;margin:0 40px 8px 0}
+#sheet p{margin-bottom:8px}
+.sx{position:absolute;top:10px;right:12px;width:44px;height:44px;border:0;background:none;font-size:20px}
+.row{display:flex;align-items:center;gap:12px;padding:4px 0}
+.row .op{flex-direction:row;padding:8px 0;font-size:16px}
+#fab{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:25;display:none;min-height:50px;padding:0 22px;border-radius:99px;border:0;background:var(--ink);color:var(--bg);font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+@media(max-width:860px){
+:root{--figh:34vh}
+.grid2,.stage{grid-template-columns:1fr}.stage{gap:0;margin-top:28px}.subs li.has-art{display:grid;grid-template-columns:auto 1fr;align-items:start}.subs li.has-art .sub-art{grid-column:1/-1;width:min(160px,48vw);margin-bottom:2px}
+.fig{top:calc(env(safe-area-inset-top,0px) + 56px);z-index:15;background:var(--bg);margin:0 -20px;padding:6px 20px;border-bottom:1px solid var(--line)}
+.fig svg{max-height:30vh}
+.step{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 56px + var(--figh))}
+.br{display:none}nav .wrap{gap:10px}.links button{padding:0 8px;font-size:14px}.art-inline{display:none}.art-top{display:block;margin:0 auto 12px;width:min(220px,56vw)}.kp{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body>
+<nav id="nav"><div class="wrap"><button class="home" data-top aria-label="홈으로 이동" title="홈"><svg viewBox="118 130 58.8 52" aria-hidden="true"><path fill="#d8a573" d="M148.42,131.51l-.68-.32-.28-.13-.06-.03h-.01l-.16.08-.86.4-27.29,12.69h0v36.81h56.62v-36.8h0l-27.29-12.69h.01ZM156.99,174.19l-9.6-6.97-9.6,6.97,3.67-11.28-9.6-6.97h11.86l3.67-11.28,3.67,11.28h11.86l-9.6,6.97,3.67,11.28Z"/></svg></button><div class="links"><button data-to="intro">목판화란?</button><button data-to="gear">준비물</button><button data-to="steps">만드는 순서</button></div></div></nav>
+<header class="hero"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="boardArt" viewBox="28 98 227 130"><defs><linearGradient id="hg1" x1="119.39" y1="165.26" x2="185.03" y2="165.26" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient><linearGradient id="hg2" x1="90.13" y1="156.6" x2="100.58" y2="156.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient><linearGradient id="hg3" x1="68" y1="155.51" x2="83.53" y2="155.51" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient></defs><polyline points="31.62 148.95 34.01 160.06 140.06 224.19 140.37 211.41 31.62 148.95" fill="#8c6d50"/><polyline points="251.5 148.95 249.78 160.06 140.06 224.19 140.37 211.41 251.5 148.95" fill="#4f3d2f"/><polygon points="144.09 102.89 31.62 148.95 140.37 211.41 251.5 148.95 144.09 102.89" fill="#d8a573"/><polygon points="140.06 123.59 129.29 136.25 97.04 139.47 122.43 149.61 119.49 167.24 149.92 157.65 185.03 164.86 171.95 147.86 190.74 136.18 157.9 135.25 140.06 123.59" fill="#231f20"/><polyline points="97.04 139.47 97.13 144.5 121.62 154.49 122.43 149.61 97.04 139.47" fill="#8c6d50"/><polyline points="119.49 167.24 119.39 172.87 149.92 162.9 184.68 170.29 185.03 164.86 149.92 157.65 119.49 167.24" fill="url(#hg1)"/><polyline points="190.74 136.18 190.47 141.18 174.55 151.24 171.95 147.86 190.74 136.18" fill="#4f3d2f"/><path d="M90.13,152.57v5.95c.26.27,2.14,2.15,5.22,2.12,3-.03,4.8-1.84,5.08-2.12l.15-5.95h-10.45Z" fill="url(#hg2)"/><ellipse cx="95.36" cy="152.76" rx="2.69" ry="5.23" transform="translate(-60.88 242.32) rotate(-87.85)" fill="#231f20"/><path d="M68,150v7.6c.42.47,3.14,3.4,7.62,3.41,4.5,0,7.24-2.95,7.66-3.41l.25-7.02-15.53-.58Z" fill="url(#hg3)"/><ellipse cx="75.76" cy="150.29" rx="4.15" ry="7.77" transform="translate(-77.27 220.36) rotate(-87.85)" fill="#231f20"/></symbol></svg><div class="hero-in"><svg class="hero-art art-top ln" style="--i:0" viewBox="0 0 227 130" aria-hidden="true"><use href="#boardArt" width="227" height="130"/></svg><div class="hero-txt"><h1><span class="ln" style="--i:1">How To Make</span><span class="ln" style="--i:2">A <span class="w">Woodcut</span></span><span class="ln l3" style="--i:3">At Home<svg class="hero-art art-inline" viewBox="0 0 227 130" aria-hidden="true"><use href="#boardArt" width="227" height="130"/></svg></span></h1><p class="k ln" style="--i:4">-집에서 단색 목판화 제작-</p></div></div></header>
+<section id="intro"><div class="wrap"><p class="ey">알아두기</p><h2 class="dis">목판화란?</h2>
+<div class="grid2" style="grid-template-columns:1fr"><div class="card" style="max-width:720px"><p>가장 오랜 역사를 지닌 판화로, 나무를 판재로 쓰는 볼록판 형식이에요. 조각칼로 파내는 과정에서 거친 칼자국이 그대로 남는 것이 가장 큰 특징이에요.</p><br><p>우리가 만들 단색 목판화는 한 판을 새겨 단색으로 찍는 방식이고, 보통 흑백의 대비로 표현돼요.</p></div>
+</div></div></section>
+<section id="gear"><div class="wrap"><p class="ey">먼저 챙겨요</p><h2 class="dis">준비물</h2><p class="sub" style="margin:6px 0 16px">카드를 누르면 설명이 열려요.</p>
+<div class="items" id="g1" style="margin-top:0"></div><div class="grid2" style="margin-top:32px"><div class="card"><h3>조각도 사용법</h3><div class="seg" id="kseg"></div><div class="kp" id="kp"></div></div>
+<div class="card"><h3>목판 종류</h3><div class="seg"><button data-w="e">눈목판</button><button data-w="g">널목판</button></div><div class="swatch" id="sw"></div><p id="wt"></p><p class="sub" style="margin-top:8px">MDF 12T를 추천한다. 크기는 A4 이하가 집에서 조각하기 좋다.</p></div></div></div></section>
+<section id="steps"><div class="wrap"><p class="ey">네 단계로 완성</p><h2 class="dis">만드는 순서</h2><div class="stage"><div class="fig" id="fig"></div><div id="list"></div></div></div></section>
+<footer class="sub">원본 인포그래픽 ‘How to Make A Woodcut At Home’을 웹으로 재구성했어요.</footer>
+<div id="sheet" role="dialog" aria-live="polite"><button class="sx" aria-label="닫기">✕</button><div id="sb"></div></div><button id="fab"></button>
+<script>
+const I={
+tracing:{n:'트레이싱지',e:'📃',l:'tracing',d:'아이디어 스케치를 그리는 반투명 종이다. 뒤집어서 목판 위에 올려 따라 그린다.'},
+carbon:{n:'먹지',e:'⬛',l:'carbon',d:'목판 위에 깔고, 그 위에 뒤집은 트레이싱지를 올려 따라 그리면 그림이 목판에 옮겨진다.'},
+board:{n:'목판',e:'🪵',l:'board',d:'MDF 12T를 추천한다. A4 이하가 집에서 조각하기 좋다. 눈목판은 섬세한 표현, 널목판은 거친 표현에 조각하기 쉽다.'},
+newspaper:{n:'신문지',e:'📰',l:'newspaper',d:'청소가 편하도록 작업대에 깐다. 3단계에서는 판화지 위에 올려 바렌으로 누를 때도 쓴다.'},
+pad:{n:'미끄럼 방지판',e:'🔲',l:'pad',d:'신문지 위에 올려 목판이 미끄러지지 않게 잡아준다.'},
+gloves:{n:'목장갑',e:'🧤',d:'조각칼에 손을 다치지 않도록 낀다. 항상 손을 조심하며 조각한다.'},
+flat:{n:'넙적칼',e:'🔪',d:'평평한 면적을 파내거나 불필요한 면을 정리할 때 쓴다. 처음에 전체적으로 얇게 깎는다.'},
+gouge:{n:'창칼',e:'🗡️',o:1,d:'형태의 윤곽을 새길 때 쓴다.'},
+round:{n:'둥근칼',e:'🥄',o:1,d:'평평한 면적에 칼자국 효과를 줄 때 쓴다.'},
+vtool:{n:'세모칼',e:'📐',d:'세밀하게 조각할 때 쓴다. 세부를 섬세하게 깎는다.'},
+paper:{n:'판화지',e:'🗒️',l:'paper',d:'찍기 전 10분 정도 물에 담갔다가 신문지나 갱지로 감싸 물기를 뺀다.'},
+tape:{n:'테이프',e:'🩹',d:'신문지에 판화지를 올려놓을 위치를 표시할 때 쓴다.'},
+spray:{n:'분무기',e:'💦',o:1,d:'판화지가 합장지라면 전체적으로 뿌려 물기를 준다.'},
+ink:{n:'수성잉크',e:'🎨',d:'스피드볼 메이커의 수성블럭 잉크를 추천한다. 통과 튜브 형태가 있는데 튜브가 더 편리하다.'},
+roller:{n:'판화용 롤러',e:'🖌️',d:'목판이 A4 정도면 20cm, 10cm 롤러를 추천한다. 세밀한 부분이 있다면 5cm 롤러도 필요하다.'},
+baren:{n:'나무 바렌',e:'🔘',d:'판 위에 얹은 종이 뒷면을 문질러 잉크가 종이에 고르게 스며들도록 한다.'},
+pencil:{n:'연필',e:'✏️',x:1,d:'원본에는 없는 추가 팁이다. 스케치할 때, 그리고 사인을 연필로 하면 번지지 않는다.'}};
+const S=[
+{t:'스케치',i:['tracing','carbon','board','pencil'],s:[['아이디어 스케치를 {tracing}에 그린다.',0,'carve'],['{board} 위에 {carbon}를 깔고 {tracing}를 뒤집어서 따라 그린다.']]},
+{t:'조각',i:['newspaper','pad','board','gloves','flat','vtool','gouge','round'],s:[['편리한 청소를 위해 {newspaper}를 깐 후, {pad}을 그 위에 올린다.'],['{gloves}을 끼고 {flat}로 전체적으로 얇게 깎는다.'],['이후 {vtool}로 세부적으로 섬세하게 깎는다.',['w','조각도로 파낸 부분은 찍히지 않고, 파내지 않은 부분이 프린트된다. 또한 항상 손을 조심하며 조각한다.']]]},
+{t:'프린트',i:['paper','newspaper','tape','ink','roller','baren','board','spray'],s:[['미리 {paper}를 10분 정도 물에 담그고, {newspaper} 또는 갱지로 감싸 물기를 뺀다.{timer}',['t','합장지인 경우 전체적으로 {spray}를 뿌리면 된다.']],['{newspaper}에 {tape}로 판화지를 올려놓을 위치를 표시한 후, {ink}이 묻은 {roller}를 {board}에 바른다.'],['{board} 위에 {paper}, {newspaper} 순으로 올려놓고 {baren}으로 고르게 누른다.',['t','건조한 날씨에는 목판의 잉크가 빨리 마른다. 판화지에 머금은 물기의 정도, 잉크의 양 조절이 중요하다.']]]},
+{t:'사인',i:['pencil'],s:[['건조한 후 싸인을 한다.'],['싸인은 아래 순서로 기입한다.{sign}']]}];
+const L=[['n1','newspaper','신문지','#4b4b4f','#2c2c2e'],['pad','pad','미끄럼 방지판','#b9bbbe','#8a8c8f'],['board','board','목판','#D9A36E','#8d5a2b'],['board2','board','목판','#D9A36E','#8d5a2b'],['board3','board','목판','#D9A36E','#8d5a2b'],['paper','paper','판화지','#ffffff','#cfcfcf'],['paper3','paper','판화지','#ffffff','#cfcfcf'],['carbon','carbon','먹지','#3a3a3d','#222'],['tracing','tracing','트레이싱지','#efefef','#c9c9c9'],['n2','newspaper','신문지','#4b4b4f','#2c2c2e']];
+const ST=[{tracing:[0,'line'],carbon:[70],board:[140]},{n1:[180],pad:[110],board2:[40]},{n2:[18],paper3:[86],board3:[160]},{paper:[110]}];
+const K=[['flat','<rect x="123.59" y="142.06" width="124.73" height="24.51" fill="#5a5b5d" stroke="none"/><path class="fh" d="M68,135.96h95.52c5.94,0,10.76,4.82,10.76,10.76v15.19c0,5.94-4.82,10.76-10.76,10.76h-95.52v-36.71h0Z" fill="#231f20" stroke="none"/>','66 134 184 40'],['gouge','<polygon points="222.25 166.57 117.09 166.57 117.09 142.06 241.82 142.06 222.25 166.57" fill="#5a5b5d" stroke="none"/><path class="fh" d="M61.49,135.96h95.52c5.94,0,10.76,4.82,10.76,10.76v15.19c0,5.94-4.82,10.76-10.76,10.76H61.49v-36.71h0Z" fill="#231f20" stroke="none"/>','59.49 134 184 40'],['round','<path d="M247.59,166.57h-124.73v-24.51h124.73c-.3.18-7.03,4.28-7.03,12.25,0,7.98,6.72,12.08,7.03,12.25Z" fill="#5a5b5d" stroke="none"/><path class="fh" d="M67.26,135.96h95.52c5.94,0,10.76,4.82,10.76,10.76v15.19c0,5.94-4.82,10.76-10.76,10.76h-95.52v-36.71h0Z" fill="#231f20" stroke="none"/>','65.26 134 184 40'],['vtool','<path d="M253.36,166.57h-124.73v-24.51h124.73c-3.61,4.08-7.21,8.17-10.82,12.25,3.61,4.08,7.21,8.17,10.82,12.25Z" fill="#5a5b5d" stroke="none"/><path class="fh" d="M73.03,135.96h95.52c5.94,0,10.76,4.82,10.76,10.76v15.19c0,5.94-4.82,10.76-10.76,10.76h-95.52v-36.71h0Z" fill="#231f20" stroke="none"/>','71.03 134 184 40']];
+const W={e:'눈목판: 나무를 가로로 잘라 만든 판이다. 섬세한 표현이 가능하다.',g:'널목판: 세로로 자른 판이다. 거친 표현을 할 수 있고 조각하기 쉽다.'};
+const $=id=>document.getElementById(id);
+const star=(cx,cy,R,r)=>{let p=[];for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,k=i%2?r:R;p.push((cx+k*Math.cos(a)).toFixed(1)+','+(cy+k*Math.sin(a)).toFixed(1))}return p.join(' ')};
+const SIGN='<ol class="sg">'+['에디션 번호','판화 기법','작품이름','날짜','본인 싸인'].map(x=>'<li>'+x+'</li>').join('')+'</ol>';
+const T=s=>s.replace(/\{(\w+)\}/g,(m,k)=>k=='timer'?'<br><button class="tm">⏱ 10분 타이머 시작</button><output></output>':k=='sign'?SIGN:`<button class="chip" data-i="${k}">${I[k].n}</button>`);
+let cur=0,sf=null;
+const REQ=Object.keys(I).filter(k=>!I[k].o&&!I[k].x);
+const first={};S.forEach((s,n)=>s.i.forEach(k=>first[k]??=n));
+const bd=(k,n)=>I[k].o?['o','선택']:I[k].x?['o','추가 팁']:first[k]==n?0:['c','계속 사용'];
+const card=(k,sm,b)=>`<div class="it${sm?' sm':''}" data-i="${k}"><button class="op"><span class="ic">${I[k].e}</span><span><b>${I[k].n}</b>${b?`<br><i class="bd ${b[0]}">${b[1]}</i>`:''}</span></button></div>`;
+const GEAR_HIDE=['flat','gouge','round'];
+$('g1').innerHTML=[...REQ,...Object.keys(I).filter(k=>I[k].o||I[k].x)].filter(k=>!GEAR_HIDE.includes(k)).map(k=>card(k)).join('');
+const ART={carve:`<svg class="sub-art" viewBox="62 104 175 124" role="img" aria-label="목판 위에 먹지와 트레이싱지를 올리고 스케치한 일러스트"><polyline points="67.26 166.4 69.04 174.7 148.29 222.62 148.52 213.07 67.26 166.4" fill="#8c6d50"/><polyline points="231.56 166.4 230.28 174.7 148.29 222.62 148.52 213.07 231.56 166.4" fill="#4f3d2f"/><polygon points="151.3 131.99 67.26 166.4 148.52 213.07 231.56 166.4 151.3 131.99" fill="#d8a573"/><polygon points="150.1 121.26 78.73 151.99 147.73 190.59 220.86 151.72 150.1 121.26" fill="#3b3a3c"/><polygon points="146.69 108.94 217.97 139.63 149.06 178.18 76.04 139.36 146.69 108.94" fill="#fff" fill-opacity=".7"/><g fill="none" stroke="#231f20" stroke-miterlimit="10" stroke-width=".94"><ellipse cx="103.44" cy="142.2" rx="2.49" ry="5.12" transform="translate(-43.27 239.13) rotate(-87.42)"/><ellipse cx="118.1" cy="143.97" rx="3.65" ry="1.77"/><polygon points="146.55 121.26 138.51 130.7 114.45 133.1 133.4 140.67 131.21 153.82 153.91 146.67 180.11 152.05 170.35 139.37 184.37 130.65 159.86 129.96 146.55 121.26"/></g></svg>`};
+$('list').innerHTML=S.map((s,n)=>`<article class="step" id="s${n+1}" data-s="${n}"><div class="shead"><span class="num"><b class="nt">${n+1}</b></span><h3>${s.t}</h3></div><div class="need"><p class="sub">이 단계 준비물 ${s.i.length}개 · 눌러서 설명 보기</p><div class="strip">${s.i.map(k=>card(k,1)).join('')}</div></div><ol class="subs">${s.s.map(([x,tp,im],j)=>`<li${im?' class="has-art"':''}>${im?ART[im]:''}<i>${n+1}-${j+1}</i><div>${T(x)}${tp?`<div class="tip${tp[0]=='w'?' warn':''}"><b>${tp[0]=='w'?'주의':'TIP'}</b><p>${T(tp[1])}</p></div>`:''}</div></li>`).join('')}</ol><div class="pn"><button data-g="${n-1}">← ${n?'이전 단계':'준비물'}</button>${n<3?`<button class="nx" data-g="${n+1}">다음 단계 →</button>`:'<button class="nx" data-top>처음으로 ↑</button>'}</div></article>`).join('');
+const TS=1.3,TR=140+95.1*TS;
+const TRACE=n=>`<g class="lay off" id="Ltracing" data-l="tracing"><g transform="translate(140 50) scale(${TS}) translate(-139.08 -154.31)"><polygon points="139.49 107.92 43.97 149.05 136.31 200.71 234.18 148.69 139.49 107.92" fill="#fff" fill-opacity=".7"/><ellipse cx="82.12" cy="150.99" rx="6.86" ry="3.33" transform="translate(-6.72 3.85) rotate(-2.58)" fill="none" stroke="#231f20" stroke-width="1.33"/><ellipse cx="101.02" cy="153.65" rx="4.89" ry="2.38" fill="none" stroke="#231f20" stroke-width="1.33"/><polygon class="sk" points="137.73 126.33 126.96 138.99 94.71 142.21 120.1 152.35 117.16 169.98 147.59 160.39 182.7 167.6 169.62 150.6 188.41 138.92 155.57 137.99 137.73 126.33" fill="none" stroke="#231f20" stroke-width="1.33"/></g><path d="M${(TR+3).toFixed(0)} 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+const CARBON=n=>`<g class="lay off" id="Lcarbon" data-l="carbon"><g transform="translate(140 50) scale(${TS}) translate(-157.54 -156.03)"><polygon points="157.95 109.63 62.43 150.76 154.77 202.42 252.64 150.4 157.95 109.63" fill="#434345"/></g><path d="M${(TR+3).toFixed(0)} 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+const BS=1.25;
+const BOARD=n=>`<g class="lay off" id="Lboard" data-l="board"><g transform="translate(140 50) scale(${BS}) translate(-150.9 -147.94)"><polyline points="40.97 139.74 43.36 150.84 149.41 214.98 149.72 202.2 40.97 139.74" fill="#8c6d50"/><polyline points="260.85 139.74 259.14 150.84 149.41 214.98 149.72 202.2 260.85 139.74" fill="#4f3d2f"/><polygon points="153.44 93.68 40.97 139.74 149.72 202.2 260.85 139.74 153.44 93.68" fill="#d8a573"/></g><g transform="translate(140 50) scale(1 .5)"><polygon class="st" points="${star(0,0,64,27)}"/><ellipse class="st" cx="-82" cy="-14" rx="9" ry="9"/><ellipse class="st" cx="-66" cy="14" rx="6" ry="6"/></g><path d="M${(140+109.95*BS+3).toFixed(0)} 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+const BOARD2=n=>`<g class="lay off" id="Lboard2" data-l="board"><defs><linearGradient id="b2g1" x1="128.22" y1="158.8" x2="193.86" y2="158.8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient><linearGradient id="b2g2" x1="98.96" y1="150.13" x2="109.4" y2="150.13" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient><linearGradient id="b2g3" x1="76.82" y1="149.04" x2="92.35" y2="149.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient></defs><g transform="translate(140 50) scale(${BS}) translate(-150.38 -150.69)"><polyline points="40.45 142.49 42.83 153.59 148.89 217.72 149.19 204.95 40.45 142.49" fill="#8c6d50"/><polyline points="260.33 142.49 258.61 153.59 148.89 217.72 149.19 204.95 260.33 142.49" fill="#4f3d2f"/><polygon points="152.92 96.43 40.45 142.49 149.19 204.95 260.33 142.49 152.92 96.43" fill="#d8a573"/><g><polygon class="sk" points="148.88 117.13 138.11 129.79 105.86 133 131.25 143.15 128.32 160.77 158.74 151.19 193.86 158.39 180.78 141.4 199.57 129.71 166.72 128.79 148.88 117.13" fill="#e4b58a"/><polyline points="105.86 133 105.95 138.03 130.44 148.03 131.25 143.15 105.86 133" fill="#8c6d50"/><polyline points="128.32 160.77 128.22 166.41 158.74 156.43 193.51 163.82 193.86 158.39 158.74 151.19 128.32 160.77" fill="url(#b2g1)"/><polyline points="199.57 129.71 199.29 134.72 183.38 144.78 180.78 141.4 199.57 129.71" fill="#4f3d2f"/></g><g><path d="M98.96,146.1v5.95c.26.27,2.14,2.15,5.22,2.12,3-.03,4.8-1.84,5.08-2.12l.15-5.95h-10.45Z" fill="url(#b2g2)"/><ellipse cx="104.18" cy="146.3" rx="2.69" ry="5.23" transform="translate(-45.92 244.92) rotate(-87.85)" fill="#e4b58a"/></g><g><path d="M76.82,143.54v7.6c.42.47,3.14,3.4,7.62,3.41,4.5,0,7.24-2.95,7.66-3.41l.25-7.02-15.53-.58Z" fill="url(#b2g3)"/><ellipse cx="84.59" cy="143.83" rx="4.15" ry="7.77" transform="translate(-62.32 222.96) rotate(-87.85)" fill="#e4b58a"/></g></g><path d="M${(140+109.95*BS+3).toFixed(0)} 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+const PAD=n=>`<g class="lay off" id="Lpad" data-l="pad"><g transform="translate(140 50) scale(${BS}) translate(-149.2 -157.95)"><polygon points="35.6 149.71 36.98 155.85 149.21 219.11 149.38 212.39 35.6 149.71" fill="#8d8f91"/><polygon points="262.83 149.71 261.45 155.85 149.22 219.11 149.05 212.39 262.83 149.71" fill="#797b7d"/><polygon points="35.6 149.71 153.27 103.5 262.83 149.71 149.38 212.39 35.6 149.71" fill="#c0c1c3"/></g><path d="M${(140+113.6*BS+3).toFixed(0)} 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+const NEWS=(g,n)=>`<g class="lay off" id="L${g}" data-l="newspaper"><g transform="translate(140 50) translate(-147.09 -166.41)"><polygon points="147.7 97.87 6.59 158.63 143 234.95 287.58 158.1 147.7 97.87" fill="#4d4d4f"/></g><path d="M283 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+const PAPER3=n=>`<g class="lay off" id="Lpaper3" data-l="paper"><g transform="translate(140 50) scale(1.1) translate(-145.04 -166.41)"><polygon points="145.59 105.1 19.38 159.45 141.39 227.71 270.7 158.98 145.59 105.1" fill="#fff"/></g><path d="M281 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+const BOARD3=n=>`<g class="lay off" id="Lboard3" data-l="board"><defs><linearGradient id="b3g1" x1="119.39" y1="165.26" x2="185.03" y2="165.26" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient><linearGradient id="b3g2" x1="90.13" y1="156.6" x2="100.58" y2="156.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient><linearGradient id="b3g3" x1="68" y1="155.51" x2="83.53" y2="155.51" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8c6d50"/><stop offset=".69" stop-color="#4f3d2f"/></linearGradient></defs><g transform="translate(140 50) scale(${BS}) translate(-141.56 -157.15)"><polyline points="31.62 148.95 34.01 160.06 140.06 224.19 140.37 211.41 31.62 148.95" fill="#8c6d50"/><polyline points="251.5 148.95 249.78 160.06 140.06 224.19 140.37 211.41 251.5 148.95" fill="#4f3d2f"/><polygon points="144.09 102.89 31.62 148.95 140.37 211.41 251.5 148.95 144.09 102.89" fill="#d8a573"/><g><polygon class="sk" points="140.06 123.59 129.29 136.25 97.04 139.47 122.43 149.61 119.49 167.24 149.92 157.65 185.03 164.86 171.95 147.86 190.74 136.18 157.9 135.25 140.06 123.59" fill="#231f20"/><polyline points="97.04 139.47 97.13 144.5 121.62 154.49 122.43 149.61 97.04 139.47" fill="#8c6d50"/><polyline points="119.49 167.24 119.39 172.87 149.92 162.9 184.68 170.29 185.03 164.86 149.92 157.65 119.49 167.24" fill="url(#b3g1)"/><polyline points="190.74 136.18 190.47 141.18 174.55 151.24 171.95 147.86 190.74 136.18" fill="#4f3d2f"/></g><g><path d="M90.13,152.57v5.95c.26.27,2.14,2.15,5.22,2.12,3-.03,4.8-1.84,5.08-2.12l.15-5.95h-10.45Z" fill="url(#b3g2)"/><ellipse cx="95.36" cy="152.76" rx="2.69" ry="5.23" transform="translate(-60.88 242.32) rotate(-87.85)" fill="#231f20"/></g><g><path d="M68,150v7.6c.42.47,3.14,3.4,7.62,3.41,4.5,0,7.24-2.95,7.66-3.41l.25-7.02-15.53-.58Z" fill="url(#b3g3)"/><ellipse cx="75.76" cy="150.29" rx="4.15" ry="7.77" transform="translate(-77.27 220.36) rotate(-87.85)" fill="#231f20"/></g></g><path d="M${(140+109.95*BS+3).toFixed(0)} 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+const PAPER4=n=>`<g class="lay off" id="Lpaper" data-l="paper"><g transform="translate(140 50) scale(1.1) translate(-147.4 -154.32)"><polygon points="147.94 93.01 21.73 147.36 143.74 215.62 273.06 146.88 147.94 93.01" fill="#fff"/><ellipse cx="138.84" cy="181.25" rx="3.33" ry="6.86" transform="translate(-48.48 311.78) rotate(-87.42)" fill="#231f20"/><ellipse cx="140.15" cy="167.51" rx="4.89" ry="2.38" fill="#231f20"/><polygon class="sk" points="150.72 121.49 161.49 134.15 193.74 137.37 168.35 147.51 171.29 165.14 140.86 155.56 105.75 162.76 118.83 145.76 100.03 134.08 132.88 133.15 150.72 121.49" fill="#231f20"/></g><path d="M281 50H291" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`;
+$('fig').innerHTML='<svg viewBox="0 0 420 300" role="img" aria-label="목판화 레이어 분해도">'+L.map(([g,k,n,c,s])=>g=='tracing'?TRACE(n):g=='carbon'?CARBON(n):g=='board'?BOARD(n):g=='board2'?BOARD2(n):g=='board3'?BOARD3(n):g=='pad'?PAD(n):g=='paper3'?PAPER3(n):g=='paper'?PAPER4(n):(g=='n1'||g=='n2')?NEWS(g,n):`<g class="lay off" id="L${g}" data-l="${k}"><polygon points="0,50 140,100 280,50 280,60 140,110 0,60" fill="${s}"/><polygon points="140,0 280,50 140,100 0,50" fill="${c}"${g=='tracing'?' fill-opacity=".85"':''} stroke="${s}"/><g transform="translate(140 50) scale(1 .5)"><polygon class="st" points="${star(0,0,64,27)}"/><ellipse class="st" cx="-82" cy="-14" rx="9" ry="9"/><ellipse class="st" cx="-66" cy="14" rx="6" ry="6"/></g><path d="M282 50h9" stroke="currentColor"/><text x="296" y="55">${n}</text></g>`).join('')+'</svg>';
+const svg=$('fig').querySelector('svg');
+function placeFig(){const f=$('fig'),s1=$('s1')
+if(innerWidth<=860){f.style.marginTop='';f.style.top='';return}
+const h1=s1.offsetHeight-parseFloat(getComputedStyle(s1).paddingBottom),m=Math.max(0,(h1-f.offsetHeight)/2),thF=parseFloat(getComputedStyle(s1).scrollMarginTop)+60;
+f.style.marginTop=m+'px';f.style.top=(thF+m)+'px'}
+if(window.ResizeObserver){const ro=new ResizeObserver(placeFig);ro.observe($('fig'));ro.observe($('s1'))}
+addEventListener('resize',placeFig);addEventListener('load',placeFig);placeFig();
+function hl(k){const g=[...svg.querySelectorAll('.lay:not(.off)')].filter(x=>x.dataset.l==k);if(!g.length)return;svg.classList.add('hasHl');g.forEach(x=>x.classList.add('hl'))}
+function unhl(){svg.classList.remove('hasHl');svg.querySelectorAll('.hl').forEach(x=>x.classList.remove('hl'))}
+/* 단계가 바뀌면 이미지가 애니메이션 없이 바로 교체된다 */
+function setStep(i){cur=i;unhl();const st=ST[i];
+L.forEach(([g])=>{const e=$('L'+g),v=st[g];
+e.style.transform=`translateY(${v?v[0]:130}px)`;
+e.setAttribute('class','lay st-'+(v&&v[1]||'none')+(v?'':' off'))});
+$('fab').textContent='🧰 '+(i+1)+'단계 준비물 '+S[i].i.length+'개'}
+const det=k=>()=>{const t=I[k],us=S.map((s,i)=>s.i.includes(k)?(i+1)+'단계':0).filter(Boolean);return `<h4>${t.e} ${t.n}</h4><p>${t.d}</p><p class="sub">사용: ${us.join(', ')}${t.o?' · 선택 준비물':''}${t.x?' · 추가 팁':''}</p>`};
+const lst=()=>`<h4>🧰 ${cur+1}단계 준비물</h4>`+S[cur].i.map(k=>`<div class="row" data-i="${k}"><button class="op">${I[k].e} ${I[k].n}</button></div>`).join('');
+function show(fn){sf=fn;$('sb').innerHTML=fn();$('sheet').classList.add('open')}
+function closeSheet(){$('sheet').classList.remove('open');sf=null;unhl()}
+function go(i){closeSheet();document.getElementById(i<0?'gear':'s'+(Math.min(i,3)+1)).scrollIntoView({behavior:'smooth',block:'start'})}
+function knife(k){$('kseg').innerHTML=K.map(([id])=>`<button data-k="${id}" class="${id==k?'on':''}">${I[id].n}</button>`).join('');$('kp').innerHTML=`<svg viewBox="${K.find(a=>a[0]==k)[2]||'0 0 120 40'}" stroke="currentColor">${K.find(a=>a[0]==k)[1]}</svg><div><b>${I[k].n}</b><p>${I[k].d}</p></div>`}
+function wood(w){document.querySelectorAll('[data-w]').forEach(b=>b.classList.toggle('on',b.dataset.w==w));$('sw').className='swatch '+w;$('wt').textContent=W[w]}
+let tt=0,tl=0;
+function timer(b){const o=b.nextElementSibling;if(tt){clearInterval(tt);tt=0;b.textContent='⏱ 10분 타이머 시작';o.textContent='';return}tl=600;b.textContent='⏹ 취소';const f=()=>{o.textContent=String(tl/60|0).padStart(2,'0')+':'+String(tl%60).padStart(2,'0');if(!tl--){clearInterval(tt);tt=0;b.textContent='⏱ 다시 시작';o.textContent='⏰ 10분 끝! 물기를 빼요';try{navigator.vibrate([300,150,300])}catch(e){}}};f();tt=setInterval(f,1000)}
+document.addEventListener('click',e=>{const t=e.target;let c;
+if(c=t.closest('[data-k]')){knife(c.dataset.k);return}
+if(c=t.closest('[data-w]')){wood(c.dataset.w);return}
+if(c=t.closest('.tm')){timer(c);return}
+if(c=t.closest('[data-to]')){closeSheet();document.getElementById(c.dataset.to).scrollIntoView({behavior:'smooth',block:'start'});return}
+if(c=t.closest('[data-g]')){go(+c.dataset.g);return}
+if(t.closest('[data-top]')){closeSheet();scrollTo({top:0,behavior:'smooth'});return}
+if(t.closest('.sx')||!t.closest('#sheet'))closeSheet()});
+document.addEventListener('mouseover',e=>{const t=e.target.closest('.sm[data-i],.chip');t&&I[t.dataset.i].l&&hl(I[t.dataset.i].l)});
+document.addEventListener('mouseout',e=>{if(e.target.closest('.sm,.chip')&&!sf)unhl()});
+document.addEventListener('keydown',e=>{if(e.key=='Escape')closeSheet()});
+const stepsEl=$('steps');let sx=0,sy=0;
+stepsEl.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+stepsEl.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>90&&Math.abs(dy)<40)go(cur+(dx<0?1:-1))},{passive:true});
+const stepEls=[...document.querySelectorAll('.step')];let pk=0,lastY=scrollY,goUp=false;
+function pick(){pk=0;const y=scrollY;if(y!==lastY){goUp=y<lastY;lastY=y}
+const thF=parseFloat(getComputedStyle(stepEls[0]).scrollMarginTop)+60,th=goUp?Math.max(thF+40,innerHeight*.65):thF;
+let a=0;stepEls.forEach((el,i)=>{if(el.getBoundingClientRect().top<=th)a=i});
+if(innerHeight+y>=document.documentElement.scrollHeight-2)a=stepEls.length-1;
+if(a!==cur)setStep(a)}
+addEventListener('scroll',()=>{if(!pk)pk=requestAnimationFrame(pick)},{passive:true});
+addEventListener('resize',pick);
+new IntersectionObserver(e=>{document.body.classList.toggle('ins',e[0].isIntersecting);$('nav').classList.toggle('in',e[0].isIntersecting)}).observe(stepsEl);
+const navIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('.links button').forEach(b=>b.classList.toggle('on',b.dataset.to==e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['intro','gear','steps'].forEach(id=>navIO.observe($(id)));
+function optical(){const c=document.createElement('canvas').getContext('2d');
+const calc=(el,text)=>{const h=getComputedStyle(el);c.font=h.fontWeight+' '+h.fontSize+' '+h.fontFamily;c.textBaseline='alphabetic';const m=c.measureText(text);
+if(!m.fontBoundingBoxAscent&&!m.fontBoundingBoxDescent)return 0;
+return ((m.fontBoundingBoxAscent-m.fontBoundingBoxDescent)-(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent))/2};
+const t=document.querySelector('.step h3'),n=document.querySelector('.num');if(!t||!n)return;
+const r=document.documentElement.style;
+r.setProperty('--dy',(-calc(t,S.map(x=>x.t).join(''))).toFixed(2)+'px');
+r.setProperty('--ndy',(-calc(n,'1234')).toFixed(2)+'px')}
+optical();
+if(document.fonts){document.fonts.load('30px "Black Han Sans"','스케치조각프린트사인1234').catch(()=>{}).then(()=>document.fonts.ready).then(optical)}
+setStep(0);knife('flat');wood('e');
+</script></body></html>
